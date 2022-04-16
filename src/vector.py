@@ -21,16 +21,19 @@ class Vector(object):
         return self.coordinates == v.coordinates
 
 
-    def __add__(self, other-matrix):
+    def __add__(self, o):
         """
         define addition for Vector class
         """
         # This should provide duck-typing for adding vectors and vector like
         # matrices
-        new-coordinates = []
         try:
-            if self.dimension != other-matrix.dimension:
+            if self.dimension != len(o.coordinates):
                 raise ValueError('The order of the matrices must be equal')
-        except TypeError('Both operands must have degree')
+        except TypeError:
+            raise TypeError('Both operands must have degree')
 
-       return tuple(map(lambda i, j: i + j, self.coordinates, other-matrix.coordinates))
+        return tuple(map(lambda i, j: i + j, self.coordinates, o.coordinates))
+
+
+a = "this is a test"
