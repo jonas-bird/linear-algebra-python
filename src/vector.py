@@ -36,4 +36,3 @@ class Vector(object):
         return tuple(map(lambda i, j: i + j, self.coordinates, o.coordinates))
 
 
-a = "this is a test"
