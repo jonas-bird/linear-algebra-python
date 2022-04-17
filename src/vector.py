@@ -36,3 +36,15 @@ class Vector(object):
         return tuple(map(lambda i, j: i + j, self.coordinates, o.coordinates))
 
 
+    def __sub__(self, o):
+        """
+        define subtraction for Vector class
+        """
+        # check to make sure that the operands are of the same degree
+        try:
+            if self.dimension != len(o.coordinates):
+                raise ValueError('The order of the matrices must be equal')
+        except TypeError:
+            raise TypeError('Both operands must have degree')
+
+        return tuple(map(lambda i, j: i - j, self.coordinates, o.coordinates))
