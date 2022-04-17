@@ -48,3 +48,12 @@ class Vector(object):
             raise TypeError('Both operands must have degree')
 
         return tuple(map(lambda i, j: i - j, self.coordinates, o.coordinates))
+
+
+    def mult_scalar(self, scalar):
+        # create a method for scalar multiplication on Vector class
+        number_types = (int, float, complex)
+        if not isinstance(scalar, number_types):
+            raise TypeError
+
+        return tuple([scalar*i for i in self.coordinates])
